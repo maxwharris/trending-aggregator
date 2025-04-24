@@ -20,5 +20,5 @@ Aggregates trending topics from Google News, Reddit, and Twitter, analyzes their
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/trending-aggregator.git
+   git clone https://github.com/maxwharris/trending-aggregator.git
    cd trending-aggregator
