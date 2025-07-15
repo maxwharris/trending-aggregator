@@ -1,11 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Navbar() {
+  const location = useLocation();
+
   return (
     <nav>
-      <Link to="/">Dashboard</Link>
-      <Link to="/search">Search</Link>
+      <div className="nav-container">
+        <Link to="/" className="nav-brand">
+          📈 Trending Aggregator
+        </Link>
+        <div className="nav-links">
+          <Link 
+            to="/" 
+            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+          >
+            Dashboard
+          </Link>
+          <Link 
+            to="/search" 
+            className={`nav-link ${location.pathname === '/search' ? 'active' : ''}`}
+          >
+            Search
+          </Link>
+        </div>
+      </div>
     </nav>
   );
 }
