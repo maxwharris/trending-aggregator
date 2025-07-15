@@ -31,9 +31,11 @@ async function fetchAll() {
         replies: item.replies || 0,
         upvotes: item.upvotes || 0,
         comments: item.comments || 0,
+        upvoteRatio: item.upvoteRatio || 0.5,
+        score: item.score || 0,
       };
 
-      const popularityScore = calculatePopularity(metrics, item.createdAt || item.publishedAt);
+      const popularityScore = calculatePopularity(metrics, item.createdAt || item.publishedAt, item.source);
 
       const topicEntry = new Topic({
         topic: item.topic,

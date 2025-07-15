@@ -15,6 +15,16 @@ async function fetchNews() {
           link: article.url,
           summary: article.description,
           publishedAt: article.publishedAt,
+          imageUrl: article.urlToImage, // Extract image from News API
+          metrics: {
+            likes: 0,
+            retweets: 0,
+            replies: 0,
+            upvotes: 0,
+            comments: 0,
+            views: 0,
+            shares: 0
+          }
         });
       });
     } catch (error) {
